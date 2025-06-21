@@ -1,0 +1,64 @@
+config:
+  rsocket:
+#    robot_ip: "127.0.0.1"
+    robot_ip: "192.168.0.6"
+#    robot_ip: "172.17.0.2"
+  vstacker:
+    model: test/shaft_2.ply
+#    bucket_model: test/env.ply
+    bucket_tr: [0,0,-190, 0,0,0.707,0.707]  #Tr on bucket
+#    work_model: test/shaft_2.ply
+#    work_tr: [-70,0,70,0,0,0,1]   #Tr on bucket
+#    cv_model: test/cv.ply
+#    cv_tr: [0,-900,400, 0,1,0,0]
+    cv_model: test/shaft_2.ply
+    cv_tr: [0,-900,-100, 0,0,0.707,0.707]
+    layers: 5
+    dmin: 100
+    range_x: 50
+    range_y: 930
+    margin_y: 110
+  vcam:
+    trim_far: 1000
+    trim_y: 500
+    trim_x: 600
+    frame_id: camera
+#    hidden: False
+  vrobo:
+    org: [0,0,500]
+    step_y: 150
+    step_z: 15
+  vloader:
+    folder: "/home/ros/デスクトップ/LOG"
+#    folder: /root/catkin_ws/src/rovi_sim/LOG
+rovi:
+  ycam:
+    Mode: 1
+
+config_tf:
+  bucket:
+    parent_frame_id: world
+    transform:
+      rotation:
+        w: 0
+        x: 0
+        y: 0
+        z: 1
+      translation:
+        x: 500
+        y: 0
+        z: -500
+
+  prepro:
+    parent_frame_id: base
+    transform:
+      translation:
+        x: 750
+        y: 380
+        z: 345
+      rotation:
+        x: 0
+        y: 0
+        z: 0.707
+        w: -0.707
+

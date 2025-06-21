@@ -1,0 +1,10 @@
+<launch>
+  <include file="$(find rovi_csp)/launch/viewer.launch">
+    <arg name="rviz_conf" value="$(find rovi_sim)/main.rviz" />
+    <arg name="ws" value="$(find rovi_sim)" />
+  </include>
+  <node pkg="rovi" type="floats2pc" name="" args="prepro">
+    <remap from="floats" to="/prepro/master/floats" />
+    <remap from="pc" to="/prepro/master/pc" />
+  </node>
+</launch>
