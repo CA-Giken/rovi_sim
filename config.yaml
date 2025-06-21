@@ -29,8 +29,7 @@ config:
     step_y: 150
     step_z: 15
   vloader:
-    folder: "/home/ros/デスクトップ/LOG"
-#    folder: /root/catkin_ws/src/rovi_sim/LOG
+    folder: /root/catkin_ws/src/rovi_sim/LOG
 rovi:
   ycam:
     Mode: 1
